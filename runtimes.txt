@@ -1,0 +1,13 @@
+Recursive: finding 1st 20 Fibonacci number 10 times
+1: 	Time=	262152	nanoSeconds
+2: 	Time=	257448	nanoSeconds
+3: 	Time=	105631	nanoSeconds
+4: 	Time=	77405	nanoSeconds
+5: 	Time=	2764360	nanoSeconds
+6: 	Time=	81254	nanoSeconds
+7: 	Time=	79116	nanoSeconds
+8: 	Time=	832644	nanoSeconds
+9: 	Time=	215538	nanoSeconds
+10: 	Time=	79544	nanoSeconds
+Average of 10 runs=	475509	nanoSeconds
+
