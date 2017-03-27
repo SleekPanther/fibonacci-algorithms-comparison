@@ -1,13 +1,71 @@
-Recursive: finding 1st 20 Fibonacci number 10 times
-1: 	Time=	262152	nanoSeconds
-2: 	Time=	257448	nanoSeconds
-3: 	Time=	105631	nanoSeconds
-4: 	Time=	77405	nanoSeconds
-5: 	Time=	2764360	nanoSeconds
-6: 	Time=	81254	nanoSeconds
-7: 	Time=	79116	nanoSeconds
-8: 	Time=	832644	nanoSeconds
-9: 	Time=	215538	nanoSeconds
-10: 	Time=	79544	nanoSeconds
-Average of 10 runs=	475509	nanoSeconds
+fibonacciMemoizationStoreValues: finding 1st 39 Fibonacci numbers 5 times
+1: 	Time=	2138	nanoSeconds 	(2.138E-6 seconds)
+2: 	Time=	3849	nanoSeconds 	(3.849E-6 seconds)
+3: 	Time=	3849	nanoSeconds 	(3.849E-6 seconds)
+4: 	Time=	2566	nanoSeconds 	(2.566E-6 seconds)
+5: 	Time=	2138	nanoSeconds 	(2.138E-6 seconds)
+Average of 5 runs=	2908	nanoSeconds 	(2.908E-6 seconds)
+
+fibonacciRecursiveStoreValues: finding 1st 39 Fibonacci numbers 5 times
+1: 	Time=	477635155	nanoSeconds 	(0.477635155 seconds)
+2: 	Time=	491736642	nanoSeconds 	(0.491736642 seconds)
+3: 	Time=	474762598	nanoSeconds 	(0.474762598 seconds)
+4: 	Time=	476342783	nanoSeconds 	(0.476342783 seconds)
+5: 	Time=	472130811	nanoSeconds 	(0.472130811 seconds)
+Average of 5 runs=	478521597	nanoSeconds 	(0.478521597 seconds)
+
+fibonacciPhiStoreValues: finding 1st 39 Fibonacci numbers 5 times
+1: 	Time=	16678	nanoSeconds 	(1.6678E-5 seconds)
+2: 	Time=	13685	nanoSeconds 	(1.3685E-5 seconds)
+3: 	Time=	10264	nanoSeconds 	(1.0264E-5 seconds)
+4: 	Time=	808267	nanoSeconds 	(8.08267E-4 seconds)
+5: 	Time=	9836	nanoSeconds 	(9.836E-6 seconds)
+Average of 5 runs=	171746	nanoSeconds 	(1.71746E-4 seconds)
+
+
+Ignore Recursive & memoization calculating all values up to N for large N
+nthFibonacciMemoization: finding Fibonacci number in position 10000000, 5 times
+1: 	Time=	33887787	nanoSeconds 	(0.033887787 seconds)
+2: 	Time=	32172464	nanoSeconds 	(0.032172464 seconds)
+3: 	Time=	31659706	nanoSeconds 	(0.031659706 seconds)
+4: 	Time=	34124708	nanoSeconds 	(0.034124708 seconds)
+5: 	Time=	31946663	nanoSeconds 	(0.031946663 seconds)
+Average of 5 runs=	32758265	nanoSeconds 	(0.032758265 seconds)
+
+
+
+Finding just 1 fibonacci number
+nthFibonacciMemoization: finding Fibonacci number in position 43, 5 times
+1: 	Time=	427	nanoSeconds 	(4.27E-7 seconds)
+2: 	Time=	1283	nanoSeconds 	(1.283E-6 seconds)
+3: 	Time=	855	nanoSeconds 	(8.55E-7 seconds)
+4: 	Time=	856	nanoSeconds 	(8.56E-7 seconds)
+5: 	Time=	2138	nanoSeconds 	(2.138E-6 seconds)
+Average of 5 runs=	1111	nanoSeconds 	(1.111E-6 seconds)
+
+nthFibonacciRecursive: finding Fibonacci number in position 43, 5 times
+1: 	Time=	2004601137	nanoSeconds 	(2.004601137 seconds)
+2: 	Time=	2026663845	nanoSeconds 	(2.026663845 seconds)
+3: 	Time=	2162842792	nanoSeconds 	(2.162842792 seconds)
+4: 	Time=	2025932127	nanoSeconds 	(2.025932127 seconds)
+5: 	Time=	2028073395	nanoSeconds 	(2.028073395 seconds)
+Average of 5 runs=	2049622659	nanoSeconds 	(2.049622659 seconds)
+
+nthFibonacciPhi: finding Fibonacci number in position 43, 5 times
+1: 	Time=	856	nanoSeconds 	(8.56E-7 seconds)
+2: 	Time=	1283	nanoSeconds 	(1.283E-6 seconds)
+3: 	Time=	1711	nanoSeconds 	(1.711E-6 seconds)
+4: 	Time=	1283	nanoSeconds 	(1.283E-6 seconds)
+5: 	Time=	5559	nanoSeconds 	(5.559E-6 seconds)
+Average of 5 runs=	2138	nanoSeconds 	(2.138E-6 seconds)
+
+
+Ignore Recursive & memoization finding 1 fibonacci number for large N
+nthFibonacciMemoization: finding Fibonacci number in position 10000000, 5 times
+1: 	Time=	35497908	nanoSeconds 	(0.035497908 seconds)
+2: 	Time=	37049012	nanoSeconds 	(0.037049012 seconds)
+3: 	Time=	34529697	nanoSeconds 	(0.034529697 seconds)
+4: 	Time=	36174029	nanoSeconds 	(0.036174029 seconds)
+5: 	Time=	36009383	nanoSeconds 	(0.036009383 seconds)
+Average of 5 runs=	35852005	nanoSeconds 	(0.035852005 seconds)
 
