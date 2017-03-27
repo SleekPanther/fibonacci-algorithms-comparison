@@ -14,12 +14,12 @@ public class Fibonacci {
 
 		int nthFibonacci=40;
 		System.out.println(nthFibonacci+" Fibonacci numbers efficiently "+Arrays.toString( Fibonacci.fibonacciMemoization(nthFibonacci) ));
-		System.out.println("Recursively: the Fibonacci number in position "+nthFibonacci+" is: "+ Fibonacci.fibonacciRecursive(nthFibonacci-1) );		//-1 since recursive calculates 1 more than Memoizaed version
-		System.out.println(Arrays.toString( Fibonacci.fibonacciRecursiveStoreValues(10) ));
+		System.out.println("Recursively: the Fibonacci number in position "+nthFibonacci+" is: "+ Fibonacci.nthFibonacciRecursive(nthFibonacci-1) );		//-1 since recursive calculates 1 more than Memoizaed version
+		System.out.println("15 Fibonacci numbers recursively "+Arrays.toString( Fibonacci.nthFibonacciRecursiveStoreValues(14) ));
 
 
-		fibonacciCalculator.printStringToFile( callFibonacciRecursiveStoreValues(10, 20) );		//save results to file
-		
+		// fibonacciCalculator.printStringToFile( callMethod("nthFibonacciRecursiveStoreValues",10, 30) );		//save results to file
+		fibonacciCalculator.printStringToFile( callMethod("fibonacciMemoization",10, 30) );		//save results to file
 		
 		fibonacciCalculator.closeFile();
 	}
@@ -28,9 +28,8 @@ public class Fibonacci {
 		try {
 			outputFile = new PrintWriter(new File(outputFileName));
 		} catch (FileNotFoundException e) {
-			System.out.println("Couldn't create "+outputFileName);
+			System.out.println("Couldn't create file: \""+outputFileName+"\"");
 		}
-		
 	}
 
 	public void printStringToFile(String string){
@@ -53,45 +52,64 @@ public class Fibonacci {
 	}
 	
 	//use recursive function & store values
-	public static long[] fibonacciRecursiveStoreValues(int n){
+	public static long[] nthFibonacciRecursiveStoreValues(int n){
 		long[] fibonacciSequence = new long[n];
 		
 		for(int i=0; i<fibonacciSequence.length; i++){
-			fibonacciSequence[i] = Fibonacci.fibonacciRecursive(i);
+			fibonacciSequence[i] = Fibonacci.nthFibonacciRecursive(i);
 		}
 
 		return fibonacciSequence;
 	}
 	
-	public static int fibonacciRecursive(int n){
+	//Calculates Fibonacci number recursively
+	//Since it the base case starts @ 0, if you want the 10th fibonacci number, call nthFibonacciRecursive(9) to offset
+	public static int nthFibonacciRecursive(int n){
 		if(n <2){		//base cases for n=0 or n=1
 			return n;
 		}
-		return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);	//recursive cases
+		return nthFibonacciRecursive(n-1) + nthFibonacciRecursive(n-2);	//recursive cases
 	}
 
 	//throw away 1st iteration
-	public static String callFibonacciRecursiveStoreValues(int times, int n){
-		System.out.println("Recursive: finding 1st "+n+" Fibonacci number "+times+" times");
-		String message="Recursive: finding 1st "+n+" Fibonacci number "+times+" times" +"\n";
+	public static String callMethod(String methodName, int times, int n){
+		System.out.println(methodName+": finding 1st "+n+" Fibonacci numbers "+times+" times");
+		String message=methodName+": finding 1st "+n+" Fibonacci numbers "+times+" times" +"\n";
+		
 		long total =0;
 		for(int i=0; i<=times; i++){	//0 & <= to ignore 0th iteration
 			long start=System.nanoTime();
-			fibonacciRecursiveStoreValues(n);		//the time consuming operation
+
+			//switch to see which method to call
+			switch(methodName){
+				case "fibonacciMemoization":
+					// System.out.println("fibonacciMemoization");		//The method call is the time consuming operation
+					fibonacciMemoization(n);
+					break;
+				case "nthFibonacciRecursiveStoreValues":
+					// System.out.println("nthFibonacciRecursiveStoreValues");	//The method call is the time consuming operation
+					nthFibonacciRecursiveStoreValues(n);
+					break;
+				default:
+					System.out.println("Unknown method name");
+					break;
+			}
+
 			if(i > 0){		//ignore i==0
 				long duration = System.nanoTime() - start;
 				total+=duration;
-				System.out.print(i+": \tTime=\t" + duration +"\tnanoSeconds" +"\n");
-				message += i+": \tTime=\t" + duration +"\tnanoSeconds" +"\n";
+				System.out.print(i+": \tTime=\t" + duration +"\tnanoSeconds \t(" + getSeconds(duration) +" seconds)" +"\n");
+				message += i+": \tTime=\t" + duration +"\tnanoSeconds \t(" + getSeconds(duration) +" seconds)" +"\n";
 			}
 		}
-		System.out.println("Average of "+times+" runs=\t"+ (total/times) +"\tnanoSeconds" +"\n");
-		message+="Average of "+times+" runs=\t"+ (total/times) +"\tnanoSeconds" +"\n";
+		long average=total/times;
+		System.out.println("Average of "+times+" runs=\t"+ average +"\tnanoSeconds \t(" + getSeconds(average) +" seconds)" +"\n");
+		message+="Average of "+times+" runs=\t"+ average +"\tnanoSeconds \t(" + getSeconds(average) +" seconds)" +"\n";
 		return message;
 	}
 	
 	public static double getSeconds(long nanoSeconds){
-		return 0;
+		return nanoSeconds / 1000000000.0;	//1 nanoSecond = 10^(-9) seconds
 	}
 
 }
