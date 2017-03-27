@@ -5,23 +5,23 @@ Comparison between runtimes of a **recursive** implementation, a **memoized arra
 F[0]=0  
 F[1]=1  
 F[i]=F[i-1]+F[i-2]  
-**Indexes start from 0. The very "first" entry in the sequence is the 0th fibonacci number. This matches up with Java Array positions**
+**Indexes start from 0. The very "first" entry in the sequence is the 0th Fibonacci number. This matches up with Java Array positions**
 
 ## Methods of Calculation
 ### Array Memoization
 #### `fibonacciMemoizationStoreValues(int n)`
 - Calculates & saves all Fibonacci number up to n in an array
-- **Memoization** stores the already calculated Fibonacci numbers in an array. The subsequent fibonacci numbers are calculated by looking up values already stored in the array to avoid recalculation
+- **Memoization** stores the already calculated Fibonacci numbers in an array. The subsequent Fibonacci numbers are calculated by looking up values already stored in the array to avoid recalculation
 
 #### `nthFibonacciMemoization(int n)`
-- Just return the *n*th fibonacci number
+- Just return the *n*th Fibonacci number
 - Calls `fibonacciMemoizationStoreValues()` to calculate the array & then access the number as index `n`
 
 
 ### Recursively
 #### `nthFibonacciRecursive(int n)`
-- Recersively calculate the *n*th Fibonacci Number
-- Very inefficient since it's an exponential  algorithm that recalculatea all the way down to the base case every time
+- Recessively calculate the *n*th Fibonacci Number
+- Very inefficient since it's an exponential  algorithm that recalculate all the way down to the base case every time
 
 #### `fibonacciRecursiveStoreValues(int n)`
 - Calls `nthFibonacciRecursive()` to store values in array
@@ -32,7 +32,7 @@ Where **≈** means ***Round* to the nearest integer**
 **This only works up to N=50, then the `double` overflows to negative**
 
 #### `nthFibonacciPhi(int n)`
-- Use the formula & just get the *n*th fibonacci number
+- Use the formula & just get the *n*th Fibonacci number
 - No arrays used
 
 #### `fibonacciPhiStoreValues(int n)`
