@@ -27,7 +27,7 @@ F[i]=F[i-1]+F[i-2]
 - Calls `nthFibonacciRecursive()` to store values in array
 
 ### Phi φ (Golden Ratio)
-Fibonacci Numbers can be approximated with the formula ![](pictures/phi-formula.png)  
+Fibonacci Numbers can be approximated with the formula ![](images/phi-formula.png)  
 Where **≈** means ***Round* to the nearest integer**  
 **This only works up to N=50, then the `double` overflows to negative**
 
