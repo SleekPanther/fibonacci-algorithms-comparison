@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.Arrays;
+import java.util.*;
 
 public class Fibonacci {
 	private static final double ROOT5= Math.sqrt(5);	//used in nthFibonacciPhi(), only calculated here ONCE
@@ -101,7 +101,7 @@ public class Fibonacci {
 		return nthFibonacciRecursive(n-1) + nthFibonacciRecursive(n-2);	//recursive cases
 	}
 
-	//WARNINT! Overflows to negative for n>50
+	//WARNING! Overflows to negative for n>50
 	public static long[] fibonacciPhiStoreValues(int n){
 		long[] fibonacciSequence = new long[n];
 		
@@ -112,7 +112,7 @@ public class Fibonacci {
 	}
 
 	//Calculates Fibonacci number using PHI (Golden ratio)
-	//WARNINT! Overflows to negative for n>50
+	//WARNING! Overflows to negative for n>50
 	public static int nthFibonacciPhi(int n){
 		double fibonacciNumberDouble = (1/ROOT5)*Math.pow(PHI, n);	//use PHI formula
 		return (int)(Math.round(fibonacciNumberDouble));		//ROUND to nearest integer
