@@ -60,3 +60,5 @@ The `n+1` is to that it matches up with output from the other 2 methods of calcu
 
 ## References
 - [PHI Golden Ratio Fibonacci Formula](http://www.askamathematician.com/2011/04/q-is-there-a-formula-to-find-the-nth-term-in-the-fibonacci-sequence/)
+- [Closed Form Fibonacci](http://pages.pacificcoast.net/~cazelais/222/rec.pdf#page=2)
+
